@@ -70,7 +70,7 @@ int main(void) {
 
 	pwm_init(); // PWM 초기화
 	set_motor_speed(0); // 초기에는 모터 정지
-	uint16_t speed = 0; // 모터 속도 (0: 정지, 32768: 50%, 13107: 20%)
+	uint16_t speed = 0; // 모터 속도 (0: 정지)
 	uint8_t speed_toggle = 0; // 버튼 3의 누름 상태를 저장
 
 	while (1) {
@@ -92,7 +92,7 @@ int main(void) {
 			speed_toggle = !speed_toggle; // 토글 상태 변경
 			if (speed_toggle) {
 				display_number(3); // 7-세그먼트에 '3' 표시
-				speed = 45845; // 모터 속도 50%
+				speed = 45845; // 모터 속도 70%
 				} else {
 				display_number(4); // 7-세그먼트에 '4' 표시
 				speed = 55705; // 모터 속도 85%
